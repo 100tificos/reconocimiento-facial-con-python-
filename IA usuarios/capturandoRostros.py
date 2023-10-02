@@ -2,22 +2,21 @@ import cv2
 import os
 import imutils
 
-personName = 'Gaby'
-dataPath = 'C:/Users/Gaby/Desktop/Reconocimiento Facial/Data' #Cambia a la ruta donde hayas almacenado Data
+personName = 'Angel'
+dataPath = '/home/kevin/Documentos/python/reconocimientofacial/IA usuarios/Data' #Cambia a la ruta donde hayas almacenado Data
 personPath = dataPath + '/' + personName
 
 if not os.path.exists(personPath):
 	print('Carpeta creada: ',personPath)
 	os.makedirs(personPath)
 
-cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-#cap = cv2.VideoCapture('Video.mp4')
+#cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+cap = cv2.VideoCapture('/home/kevin/Documentos/python/reconocimientofacial/IA usuarios/angel.mp4')
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 count = 0
 
 while True:
-
 	ret, frame = cap.read()
 	if ret == False: break
 	frame =  imutils.resize(frame, width=640)

@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 
-dataPath = 'C:/Users/Gaby/Desktop/Reconocimiento Facial/Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = '/home/kevin/Documentos/python/reconocimientofacial/IA usuarios/Data' #Cambia a la ruta donde hayas almacenado Data
 peopleList = os.listdir(dataPath)
 print('Lista de personas: ', peopleList)
 
@@ -32,6 +32,7 @@ for nameDir in peopleList:
 #face_recognizer = cv2.face.FisherFaceRecognizer_create()
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
+
 # Entrenando el reconocedor de rostros
 print("Entrenando...")
 face_recognizer.train(facesData, np.array(labels))
@@ -39,5 +40,5 @@ face_recognizer.train(facesData, np.array(labels))
 # Almacenando el modelo obtenido
 #face_recognizer.write('modeloEigenFace.xml')
 #face_recognizer.write('modeloFisherFace.xml')
-face_recognizer.write('modeloLBPHFace.xml')
+face_recognizer.write('/home/kevin/Documentos/python/reconocimientofacial/IA usuarios/modeloLBPHFace.xml')
 print("Modelo almacenado...")

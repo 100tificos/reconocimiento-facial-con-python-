@@ -1,7 +1,7 @@
 import cv2
 import os
 
-dataPath = 'C:/Users/Gaby/Desktop/Reconocimiento Facial/Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = '/home/kevin/Documentos/python/reconocimientofacial/IA usuarios/Data' #Cambia a la ruta donde hayas almacenado Data
 imagePaths = os.listdir(dataPath)
 print('imagePaths=',imagePaths)
 
@@ -12,10 +12,10 @@ face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 # Leyendo el modelo
 #face_recognizer.read('modeloEigenFace.xml')
 #face_recognizer.read('modeloFisherFace.xml')
-face_recognizer.read('modeloLBPHFace.xml')
+face_recognizer.read('/home/kevin/Documentos/python/reconocimientofacial/IA usuarios/modeloLBPHFace.xml')
 
 #cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-#cap = cv2.VideoCapture('Video.mp4')
+cap = cv2.VideoCapture('/home/kevin/Documentos/python/reconocimientofacial/IA usuarios/angel.mp4')
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 
